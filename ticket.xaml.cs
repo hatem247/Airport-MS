@@ -38,6 +38,12 @@ namespace Mine_branch
                 t.Seat_Number = int.Parse(Seat_tb.Text);
                 t.Ticket_Price = (int.Parse(combo.Text));
                 db.Tickets.Add(t);
+                 Loginpage lp = new Loginpage();
+                Passenger ps = new Passenger();
+                if (lp.Usernametxtbox.Text == ps.Passenger_Name)
+                {
+                    t.Passenger_Id = ps.Passenger_Id;
+                }
                 db.SaveChanges();
                 MessageBox.Show("Ticket has been added");
                 gg.ItemsSource = db.Tickets.ToList();
@@ -60,12 +66,7 @@ namespace Mine_branch
                 t.Passenger_Name = Passenger_tb.Text;
                 t.Ticket_Price = (int.Parse(combo.Text));
                 db.Tickets.AddOrUpdate(t);
-                Loginpage lp = new Loginpage();
-                Passenger ps = new Passenger();
-                if (lp.Usernametxtbox.Text == ps.Passenger_Name)
-                {
-                    t.Passenger_Id = ps.Passenger_Id;
-                }
+               
                 db.SaveChanges();
                 MessageBox.Show("Ticket Updated");
             }
