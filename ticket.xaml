@@ -1,0 +1,98 @@
+﻿<Page x:Class="Mine_branch.ticket"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Mine_branch"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ticket">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="D:\My_branch\34e4c6031983308bb52617356ef4d741.jpg"/>
+        </Grid.Background>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="101*"/>
+            <RowDefinition Height="78*"/>
+            <RowDefinition Height="196*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="198*"/>
+            <ColumnDefinition Width="321*"/>
+            <ColumnDefinition Width="281*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Tickets" Grid.Row="0" Grid.Column="1" FontSize="50" Margin="94,-12,45,1" FontFamily="Javanese Text">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0D8EB2"/>
+                    <GradientStop Color="#FF6404BD" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+
+        <Label Content="Seat number:" Grid.Row="1" Grid.Column="0" FontSize="20" Margin="45,42,1,76" Grid.RowSpan="2" FontWeight="Bold" FontFamily="Georgia"/>
+        <Label Content="Passenger name:" Grid.Row="2" Grid.Column="0" FontSize="20" Margin="20,26,276,175" Grid.RowSpan="2" FontWeight="Bold" FontFamily="Georgia" Grid.ColumnSpan="2"/>
+
+        <DataGrid x:Name="gg" Grid.Column="2" Grid.Row="2" Grid.RowSpan="2" BorderBrush="#FF4A2DAB"/>
+
+        <TextBox x:Name="Seat_tb" Text="" Grid.Row="1" Grid.Column="1" Width="270" Height="50" FontSize="35" Margin="0,30,20,0" FontFamily="Palatino Linotype" BorderBrush="#FF4A2DAB">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="Passenger_tb" Text="" Grid.Row="2" Grid.Column="1" Width="270" Height="50" FontSize="35"  Margin="0,10,20,0" FontFamily="Palatino Linotype" BorderBrush="#FF4A2DAB">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <Button x:Name="Buy_btn" Content="Buy" Grid.Column="1" Width="120" Height="40" Grid.Row="3" FontSize="18" Margin="0,0,180,90" Background="#FFF9F9F9" BorderBrush="#FF4A2DAB" FontFamily="Bahnschrift SemiLight Condensed" Click="Buy_btn_Click_1">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20">
+                    </Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="Update_btn" Content="Update" Grid.Column="1" Width="120" Height="40" Grid.Row="3" FontSize="18" Margin="0,0,-150,90" Background="#FFF9F9F9" BorderBrush="#FF4A2DAB" FontFamily="Bahnschrift SemiLight Condensed">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20">
+                    </Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button x:Name="Delete_btn" Content="Delete" Grid.Column="2" Width="120" Height="40" Grid.Row="1" FontSize="18" Margin="0,0,-11,-20" Background="#FFF9F9F9" BorderBrush="#FF4A2DAB" FontFamily="Bahnschrift SemiLight Condensed">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20">
+                    </Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <ComboBox Name="combo" Grid.Column="0" Grid.Row="3" Width="120" Height="40" Margin="0,0,30,90" >
+            <ComboBoxItem>1500</ComboBoxItem>
+            <ComboBoxItem>2000</ComboBoxItem>
+            <ComboBoxItem>2750</ComboBoxItem>
+            <ComboBoxItem>3250</ComboBoxItem>
+            <ComboBoxItem>4000</ComboBoxItem>
+            <ComboBoxItem>4500</ComboBoxItem>
+            <ComboBoxItem>5000</ComboBoxItem>
+
+        </ComboBox>
+
+    </Grid>
+</Page>
